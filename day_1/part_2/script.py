@@ -7,12 +7,9 @@ with open('input.txt', 'r') as file:
         first_list.append(first)
         second_list.append(second)
 
-first_list.sort()
-second_list.sort()
+total_similarity = 0
 
-total_diff = 0
+for first in first_list:
+    total_similarity += (first * second_list.count(first))
 
-for i in range(len(first_list)):
-    total_diff += abs(first_list[i] - second_list[i])
-
-print(total_diff)
+print(total_similarity)
